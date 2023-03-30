@@ -53,3 +53,35 @@ int main()
      printf("sum of these %0.2lf\n", sum);
      return 0;
  } 
+
+
+ int main()  
+ {  
+  char name;
+  printf("first letter of my name is : ");
+  scanf("%c", &name);
+  printf("Here is the result %c", name);
+  return 0;
+ } 
+
+
+
+ int main()  
+ {  
+ 	char sign;
+ 	double num1, num2, value;
+    scanf("%lf",  &num1);
+    scanf("%lf", &num2);
+    sign = "+";
+   	value = num1 + num2;
+    printf("%lf %c %lf %lf\n", num1, sign, num2, value);
+     sign = "-";
+   	value = num1 - num2;
+    printf("%lf %c %lf %lf\n", num1, sign, num2, value);
+    sign = "*";
+   	value = num1 * num2;
+    printf("%lf %c %lf %lf\n ", num1, sign, num2, value);
+    sign = "/";
+   	value = num1 / num2;
+    printf("%lf %c %lf %lf\n", num1, sign, num2, value);
+ } 
