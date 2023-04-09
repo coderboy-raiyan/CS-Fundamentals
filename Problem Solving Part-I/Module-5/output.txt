@@ -1,2 +1,1 @@
-ALPHA
-IS SMALL
+3 6
