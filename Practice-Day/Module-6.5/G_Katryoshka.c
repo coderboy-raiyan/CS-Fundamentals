@@ -1,33 +1,36 @@
 # include <stdio.h>
 
-// 1. Two eyes, One body
-// 2. Two eyes, one mouth, one body,
-// 3. One eyes, One body, One mouth
-
 int main(){
-    long long int n, m, k, count = 0, total;
-    scanf("%lld %lld %lld", &n, &m, &k);
-    if(n <= 0 || m <= 0 || k <= 0){
+    long long int eye, mouth, body, count=0;
+    scanf("%lld %lld %lld", &eye, &mouth, &body);
+
+    if(eye <= 0 || body <= 0){
         printf("%d", 0);
         return 0;
     }
 
-   if (n < k && n < m){
-        count = n;
-        printf("%lld", count);
-   }else if(m < n && m < k){
-        count+= m;
-        k-=m;
-        n-=m;
-        count += (n / 2 < k ? (n / 2) : k);
-        printf("%lld", count);
-   }else{
-        count+=k;
-        n-=k;
-        m-=k;
-        printf("%lld", count);
-   }
-    
+    long long int min = eye;
 
+    if(mouth < min){
+        min = mouth;
+    }
+    if(body < min){
+        min = body;
+    }
+
+    mouth-=min;
+    eye-=min;
+    body-=min;
+
+    count+=min;
+
+    if(eye / 2 < body){
+        count+=eye/2;
+    }else{
+        count+=body;
+    }
+
+    printf("%lld", count);
+    
     return 0;
 }
