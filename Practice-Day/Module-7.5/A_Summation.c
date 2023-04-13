@@ -3,10 +3,10 @@
 int main(){
     int n;
     scanf("%d", &n);
-    int nums[n],i = 0, sum = 0;
+    long long int nums[n],i = 0, sum = 0;
     for (int i = 0; i < n; i++)
     {
-        scanf("%d", &nums[i]);
+        scanf("%lld", &nums[i]);
     }
 
     while (i < n)
@@ -15,7 +15,7 @@ int main(){
         i++;
     }
     
-    printf("%d",  sum < 0 ? sum * -1 : sum);
+    printf("%lld",  sum < 0 ? sum * -1 : sum);
     
     return 0;
 }
