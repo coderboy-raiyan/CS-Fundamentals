@@ -1,20 +1,14 @@
 # include <stdio.h>
+# include <string.h>
 
 int main(){
-    int n;
-    scanf("%d", &n);
-    int nums[n];
-    for (int i = 0; i < n; i++)
+    char a[100], b[100];
+    scanf("%s", a);
+    for (int i = 0; a[i] != '\0'; i++)
     {
-       scanf("%d", &nums[i]);
-    }
-    while (n--)
-    {
-       if (n % 2 == 0){
-        printf("%d ", nums[n]);
-       }
+      b[i] = a[i];
     }
     
-    
+    printf("%s", b);
     return 0;
 }
