@@ -1,6 +1,6 @@
 # Ignore all
 *
-
+.cph
 # Unignore all with extensions
 !*.*
 
