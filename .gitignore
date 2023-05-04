@@ -1,6 +1,6 @@
 # Ignore all
 *
-.cph
+
 # Unignore all with extensions
 !*.*
 
@@ -15,6 +15,7 @@
 
 # Ignore `bin` dir
 bin/
+.cph/
 # or
 */bin/*
 
