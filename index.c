@@ -1,31 +1,29 @@
 # include <stdio.h>
-# include <string.h>
-
-int is_palindrome(char ch[10], int n){
-    int i = 0;
-    int j = n-1;
-    int isPalindrome = 0;
-    while (i < j)
-    {
-        if(ch[i] == ch[j]){
-            isPalindrome = 1;
-        }
-        i++;
-        j--;
-    }
-    return isPalindrome;
-    
-}
 
 int main(){
-    char ch[10];
-    scanf("%s", &ch);
-    int strLen = strlen(ch);
-    int isPalindrome = is_palindrome(ch, strLen);
-    if(isPalindrome){
-        printf("Palindrome");
-    }else{
-        printf("Not Palindrome");
+    int n;
+    scanf("%d", &n);
+    int s = n-1, k=1;
+    int flag = 1;
+    for (int i = 1; i <= n; i++)
+    {
+       for (int j = 1; j <= s; j++)
+       {
+         printf(" ");
+       }
+       for (int row = 1; row <= k; row++)
+       {
+        if(i % 2 != 0){
+            printf("#");
+        }else{
+             printf("%d", row);
+        }
+       }
+       s--;
+       k+=2;
+       printf("\n");
+       
     }
+    
     return 0;
 }
