@@ -3,13 +3,21 @@
 int main()
 {
     int a;
-    scanf("%d", &a);
-    char ch[1000001];
-    scanf("%s", ch);
-    for (int i = 0; i < a-1; i++)
+    scanf("%d\n", &a);
+    int cnt[26] = {0};
+    for (int i = 0; i < a; i++)
     {
-        /* code */
+        char c;
+        scanf("%c", &c);
+        cnt[c - 'a']++;
     }
-    
+    for (int i = 0; i < 26; i++)
+    {
+        while (cnt[i] != 0)
+        {
+            printf("%c", i + 97);
+            cnt[i]--;
+        }
+    }
     return 0;
 }
