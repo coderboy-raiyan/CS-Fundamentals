@@ -1,1 +1,0 @@
-{"name":"Local: nested_loop","url":"f:\\CS-fundamentals\\Problem Solving Part-I\\Module-6\\nested_loop.c","tests":[{"id":1681071148403,"input":"4","output":"1 2 3 4 5\n1 2 3 4 5\n1 2 3 4 5\n1 2 3 4 5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\CS-fundamentals\\Problem Solving Part-I\\Module-6\\nested_loop.c","group":"local","local":true}
