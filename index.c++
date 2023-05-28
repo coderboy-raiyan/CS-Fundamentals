@@ -2,26 +2,19 @@
 
 using namespace std;
 
-class Student {
-    public :
-    char name[100];
-    int roll;
-
-    Student(char * s_name, int s_roll){
-        strcpy(name, s_name);
-        roll = s_roll;
-    };
-};
-
-Student * fun(){
-    char name[100] = "Raiyna";
-    Student * std1 = new Student(name, 6182);
-    return std1;
+int * fun(){
+    int * arr = new int[4]{300, 450, 670, 89};
+    return arr;
 }
 
 int main(){
-    Student * std1 = fun();
-    cout<< std1->name;
+    int * nums = new int[5]{1, 2, 3, 4 ,5};
+    int  * array = fun();
+    sort(array, array+4, greater<int>());
+    for (int i = 0; i < 4; i++)
+    {
+       cout << array[i] << endl;
+    }
     return 0;
 }
 
