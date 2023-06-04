@@ -44,6 +44,8 @@
     "streambuf": "cpp",
     "typeinfo": "cpp",
     "typeindex": "cpp",
-    "valarray": "cpp"
-  }
+    "valarray": "cpp",
+    "complex": "cpp"
+  },
+  "cph.general.onceMaintainerMessage": false
 }

@@ -2,19 +2,23 @@
 
 using namespace std;
 
-int * fun(){
-    int * arr = new int[4]{300, 450, 670, 89};
-    return arr;
-}
-
 int main(){
-    int * nums = new int[5]{1, 2, 3, 4 ,5};
-    int  * array = fun();
-    sort(array, array+4, greater<int>());
-    for (int i = 0; i < 4; i++)
+    int n;
+    cin >> n;
+    for (int i = 1; i <= n; i++)
     {
-       cout << array[i] << endl;
+        // space
+        for (int j = i; j <= n; j++)
+        {
+            cout << " ";
+        }
+        for (int j = 1; j <= (2*i)-1; j++)
+        {
+            cout << "*";
+        }
+        cout << endl;
     }
+    
     return 0;
 }
 
