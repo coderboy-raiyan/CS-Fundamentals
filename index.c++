@@ -2,22 +2,35 @@
 
 using namespace std;
 
+class Student {
+    public :
+    string name;
+    int roll;
+    int totalNumber;
+    
+};
+
+bool customSort(Student a, Student b){
+    if(a.totalNumber == b.totalNumber){
+        return a.roll < b.roll;
+    }
+    return a.totalNumber > b.totalNumber;
+};
+
 int main(){
     int n;
     cin >> n;
-    for (int i = 1; i <= n; i++)
+    Student b3[n];
+    for (int i = 0; i < n; i++)
     {
-        // space
-        for (int j = i; j <= n; j++)
-        {
-            cout << " ";
-        }
-        for (int j = 1; j <= (2*i)-1; j++)
-        {
-            cout << "*";
-        }
-        cout << endl;
+       cin >> b3[i].name >> b3[i].roll >> b3[i].totalNumber;
     }
+    sort(b3, b3+n, customSort);
+    for (int i = 0; i < n; i++)
+    {
+           cout << b3[i].name << " " << b3[i].roll << " " << b3[i].totalNumber << endl;
+    }
+    
     
     return 0;
 }
