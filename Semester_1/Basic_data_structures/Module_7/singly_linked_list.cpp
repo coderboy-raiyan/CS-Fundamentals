@@ -78,6 +78,12 @@ void delete_node(Node * head, int pos){
     delete deletedNode;
 };
 
+void delete_head(Node * &head){
+    Node * oldHead = head;
+    head = head->next;
+    delete oldHead;
+}
+
 int main(){
     Node * head = new Node(10);
     Node * a = new Node(20);
