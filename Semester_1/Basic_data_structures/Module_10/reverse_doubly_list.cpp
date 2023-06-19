@@ -89,22 +89,27 @@ void reverse(Node * head, Node * tail){
        i = i->next;
         j = j->prev;
     }
+      swap(i->val, j->val);
+   
     
 }
 
 
 int main(){
-    Node * head = new Node(78);
-    Node * a  = new Node(200);
-    Node * b = new Node(500);
+    Node * head = new Node(10);
+    Node * a  = new Node(20);
+    Node * b = new Node(30);
+    Node * d = new Node(40);
 
-    Node * tail = b;
+    Node * tail = d;
 
 
     head->next = a;
     a->prev = head;
     a->next = b;
     b->prev = a;
+    b->next = d;
+    d->prev = b;
    reverse(head, tail);
    print_list(head);
 
