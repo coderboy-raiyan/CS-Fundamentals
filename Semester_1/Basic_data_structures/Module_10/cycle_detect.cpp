@@ -59,7 +59,7 @@ int main(){
     Node * slow = head;
     bool flag = false;
 
-    while (fast != NULL && fast->next != NULL)
+    while (fast != NULL)
     {
         slow = slow->next;
         fast = fast->next->next;
