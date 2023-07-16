@@ -1,53 +1,68 @@
-# include <bits/stdc++.h>
+#include <bits/stdc++.h>
 
 using namespace std;
 
-class ListNode {
-    public :
+class Node
+{
+public:
     int val;
-    ListNode * next;
-    ListNode(int val){
-        this->val  = val;
-        this->next = NULL;
+    Node *left;
+    Node *right;
+
+    Node(int val)
+    {
+        this->val = val;
+        this->right = NULL;
+        this->left = NULL;
     };
 };
 
-void insert_tail(ListNode * &head, ListNode *& tail, int val){
-    ListNode * newNode = new ListNode(val);
+Node *take_input()
+{
+    int val;
+    cin >> val;
+    queue<Node *> qu;
+    Node *root = NULL;
+    if (val != -1)
+    {
+        root = new Node(val);
+    };
+    while (!qu.empty())
+    {
+        Node *tmp = qu.front();
+        qu.pop();
 
-    if(head == NULL){
-        head =  newNode;
-        tail = newNode;
-        return;
+        int l, r;
+        cin >> l >> r;
+
+        Node *left = NULL;
+        Node *right = NULL;
+
+        if (l != 1)
+        {
+            left = new Node(l);
+        }
+        if (r != -1)
+        {
+            right = new Node(r);
+        }
+
+        tmp->left = left;
+        tmp->right = right;
+
+        if (tmp->left)
+        {
+            qu.push(tmp->left);
+        }
+        if (tmp->right)
+        {
+            qu.push(tmp->right);
+        }
     }
-
-    tail->next = newNode;
-    tail = newNode;
 };
 
-void print_list(ListNode * head){
-    ListNode * temp = head;
-    while (temp != NULL)
-    {
-       cout << temp->val << " ";
-       temp = temp->next;
-    }
-    
-};
+int main()
+{
 
-int main(){
-    ListNode * head = NULL;
-    ListNode * tail = NULL;
-    while (true)
-    {
-       int val;
-       cin >> val;
-       if(val == -1){
-         break;
-       }
-       insert_tail(head, tail, val);
-    }
-    
     return 0;
 }
-
