@@ -17,38 +17,19 @@ public:
     };
 };
 
-Node *take_input()
+void level_traverse(Node *root)
 {
-    int val;
-    cin >> val;
+
     queue<Node *> qu;
-    Node *root = NULL;
-    if (val != -1)
-    {
-        root = new Node(val);
-    };
+
+    qu.push(root);
+
     while (!qu.empty())
     {
         Node *tmp = qu.front();
         qu.pop();
 
-        int l, r;
-        cin >> l >> r;
-
-        Node *left = NULL;
-        Node *right = NULL;
-
-        if (l != 1)
-        {
-            left = new Node(l);
-        }
-        if (r != -1)
-        {
-            right = new Node(r);
-        }
-
-        tmp->left = left;
-        tmp->right = right;
+        cout << tmp->val << " ";
 
         if (tmp->left)
         {
@@ -61,8 +42,31 @@ Node *take_input()
     }
 };
 
+Node *convert(vector<int> v, int l, int r)
+{
+    if (l > r)
+    {
+        return NULL;
+    }
+    int mid = (l + r) / 2;
+    Node *root = new Node(v[mid]);
+    Node *leftRoot = convert(v, l, mid - 1);
+    Node *rightRoot = convert(v, mid + 1, r);
+    root->left = leftRoot;
+    root->right = rightRoot;
+    return root;
+};
 int main()
 {
-
+    int n;
+    cin >> n;
+    vector<int> v(n);
+    for (int i = 0; i < v.size(); i++)
+    {
+        cin >> v[i];
+    }
+    sort(v.begin(), v.end());
+    Node *root = convert(v, 0, v.size() - 1);
+    level_traverse(root);
     return 0;
 }
