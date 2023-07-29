@@ -4,29 +4,42 @@ using namespace std;
 
 int main()
 {
-    int t;
-    cin >> t;
-    while (t--)
+    int n;
+    cin >> n;
+    while (n--)
     {
-
-        stack<char> st;
+        vector<int> v;
         string line;
         cin >> line;
-        int eatCnt = 0;
-        st.push(line[0]);
-        for (int i = 1; i < line.size(); i++)
+        int cnt = 0;
+        for (int i = 0; i < line.size(); i++)
         {
-            if (!st.empty() && st.top() == '1')
+
+            if (line[i] == '0' && cnt != 0)
             {
-                eatCnt++;
-                st.pop();
+
+                v.push_back(cnt);
+                cnt = 0;
             }
-            else
+            if (line[i] == '1')
             {
-                st.push(line[i]);
+                cnt++;
             }
-        };
-        cout << eatCnt << endl;
+        }
+
+        v.push_back(cnt);
+        sort(v.rbegin(), v.rend());
+        int ans = 0;
+        for (int i = 0; i < v.size(); i++)
+        {
+            if (i % 2 == 0)
+            {
+                ans += v[i];
+            }
+        }
+
+        cout << ans << endl;
+        ans = 0;
     }
 
     return 0;
