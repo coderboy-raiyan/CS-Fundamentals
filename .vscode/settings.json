@@ -69,5 +69,6 @@
     "shared_mutex": "cpp",
     "thread": "cpp"
   },
-  "cph.general.onceMaintainerMessage": false
+  "cph.general.onceMaintainerMessage": false,
+  "cSpell.words": ["vpair"]
 }
