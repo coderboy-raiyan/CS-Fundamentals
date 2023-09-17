@@ -149,21 +149,28 @@ private:
 
 int main()
 {
-    DoublyLinkedList dl;
-    while (true)
+    Node *head = new Node(10);
+    Node *a = new Node(20);
+    Node *b = new Node(40);
+    Node *c = new Node(30);
+
+    head->next = a;
+    a->next = b;
+    b->next = c;
+
+    Node *slow = head;
+    Node *fast = head;
+
+    while (fast != NULL && fast->next != NULL)
     {
-        int n;
-        cin >> n;
-        if (n != -1)
+        slow = slow->next;
+        fast = fast->next->next;
+        if (slow == fast)
         {
-            dl.insert_tail(n);
-        }
-        else
-        {
+            cout << "Cycle Detected";
             break;
         }
     }
-    dl.reverse_list();
-    dl.print_list();
+
     return 0;
 }
