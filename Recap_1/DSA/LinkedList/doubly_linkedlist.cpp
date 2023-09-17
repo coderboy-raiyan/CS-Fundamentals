@@ -124,6 +124,8 @@ public:
             i = i->next;
             j = j->prev;
         };
+
+        swap(i->val, j->val);
     }
 
     void delete_node(int pos)
@@ -186,7 +188,7 @@ int main()
             break;
         }
     }
-    dl.delete_node(1);
+    dl.reverse_list();
     dl.print_list();
     return 0;
 }
