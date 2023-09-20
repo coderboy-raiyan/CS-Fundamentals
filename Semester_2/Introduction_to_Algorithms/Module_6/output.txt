@@ -1,10 +1,10 @@
-Depth node 1 : 0
-Depth node 2 : 1
-Depth node 3 : 1
-Depth node 4 : 2
-Depth node 5 : 2
-Depth node 6 : 2
-Depth node 7 : 3
-Depth node 8 : 3
-Depth node 9 : 3
-Depth node 10 : 1
+visiting node : 1
+visiting node : 2
+visiting node : 4
+visiting node : 7
+visiting node : 8
+visiting node : 3
+visiting node : 5
+visiting node : 6
+visiting node : 9
+visiting node : 10

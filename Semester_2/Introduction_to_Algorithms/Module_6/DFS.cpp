@@ -9,6 +9,7 @@ bool visited[N];
 
 void dfs(int u)
 {
+
     visited[u] = true;
     cout << "visiting node : " << u << endl;
     for (int v : adj[u])
